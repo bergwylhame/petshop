@@ -31,7 +31,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'cep', 'error')} ">
 	<label for="cep">
-		<g:message code="cliente.cep.label" default="Cep" />
+		<g:message code="cliente.cep.label" default="CEP" />
 		
 	</label>
 	<g:textField name="cep" value="${clienteInstance?.cep}"/>
@@ -49,7 +49,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: clienteInstance, field: 'cpf', 'error')}">
 	<label for="cpf">
-		<g:message code="cliente.cpf.label" default="Cpf" />
+		<g:message code="cliente.cpf.label" default="CPF" />
 	</label>
 	<g:textField name="cpf" maxlength="11" value="${clienteInstance?.cpf}"/>
 
