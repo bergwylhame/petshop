@@ -100,4 +100,10 @@ class AnimalController {
             '*' { render status: NOT_FOUND }
         }
     }
+
+    def getAnimais = {
+        def clienteInstance = Cliente.get(params.id)
+        def animaisList = clienteInstance?.animais
+        render(template: "selectAnimais", model: [animaisList:animaisList])
+    }
 }

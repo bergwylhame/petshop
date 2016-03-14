@@ -1,21 +1,26 @@
 <%@ page import="petshop.Atendimento" %>
+<g:setProvider library="jquery"/>
 
 <div class="fieldcontain ${hasErrors(bean: atendimentoInstance, field: 'cliente', 'error')} required">
 	<label for="cliente">
 		<g:message code="atendimento.cliente.label" default="Cliente" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="cliente" name="cliente.id" from="${petshop.Cliente.list()}" optionKey="id" required="" value="${atendimentoInstance?.cliente?.id}" class="many-to-one"/>
-
+	<g:select id="cliente" name="cliente.id" from="${petshop.Cliente.list()}" optionKey="id" required=""
+			  noSelection="['':'Selecione o cliente']"
+			  onchange="${remoteFunction(
+					  controller: 'animal',
+					  action: 'getAnimais',
+					  params: '\'id=\' + this.value',
+					  update: 'animalDiv'
+			  )}"
+			  value="${atendimentoInstance?.cliente?.id}" class="many-to-one"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: atendimentoInstance, field: 'animal', 'error')} required">
-	<label for="animal">
-		<g:message code="atendimento.animal.label" default="Animal" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="animal" name="animal.id" from="${petshop.Animal.list()}" optionKey="id" required="" value="${atendimentoInstance?.animal?.id}" class="many-to-one"/>
-
+<div id="animalDiv">
+	<g:if test="$atendimentoInstance.animal">
+		<g:include controller="animal" action="getAnimais" id="${atendimentoInstance?.animal?.cliente?.id}"/>
+	</g:if>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: atendimentoInstance, field: 'data', 'error')} required">

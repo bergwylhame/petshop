@@ -23,6 +23,6 @@ class Cliente {
     }
 
     String toString(){
-        this.nome + " - " + this.cpf
+        this.nome
     }
 }
