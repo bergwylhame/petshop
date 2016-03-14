@@ -25,24 +25,26 @@ invokeTag('message','g',6,['code':("default.create.label"),'args':([entityName])
 invokeTag('captureTitle','sitemesh',6,[:],3)
 })
 invokeTag('wrapTitleTag','sitemesh',6,[:],2)
+printHtmlPart(1)
+invokeTag('javascript','g',7,['library':("jquery"),'plugin':("jquery")],-1)
 printHtmlPart(2)
 })
-invokeTag('captureHead','sitemesh',7,[:],1)
+invokeTag('captureHead','sitemesh',8,[:],1)
 printHtmlPart(2)
 createTagBody(1, {->
 printHtmlPart(3)
-invokeTag('message','g',9,['code':("default.link.skip.label"),'default':("Skip to content&hellip;")],-1)
+invokeTag('message','g',10,['code':("default.link.skip.label"),'default':("Skip to content&hellip;")],-1)
 printHtmlPart(4)
 expressionOut.print(createLink(uri: '/'))
 printHtmlPart(5)
-invokeTag('message','g',12,['code':("default.home.label")],-1)
+invokeTag('message','g',13,['code':("default.home.label")],-1)
 printHtmlPart(6)
 createTagBody(2, {->
-invokeTag('message','g',13,['code':("default.list.label"),'args':([entityName])],-1)
+invokeTag('message','g',14,['code':("default.list.label"),'args':([entityName])],-1)
 })
-invokeTag('link','g',13,['class':("list"),'action':("index")],2)
+invokeTag('link','g',14,['class':("list"),'action':("index")],2)
 printHtmlPart(7)
-invokeTag('message','g',17,['code':("default.create.label"),'args':([entityName])],-1)
+invokeTag('message','g',18,['code':("default.create.label"),'args':([entityName])],-1)
 printHtmlPart(8)
 if(true && (flash.message)) {
 printHtmlPart(9)
@@ -60,25 +62,25 @@ expressionOut.print(error.field)
 printHtmlPart(15)
 }
 printHtmlPart(16)
-invokeTag('message','g',24,['error':(error)],-1)
+invokeTag('message','g',25,['error':(error)],-1)
 printHtmlPart(17)
 })
-invokeTag('eachError','g',25,['bean':(atendimentoInstance),'var':("error")],3)
+invokeTag('eachError','g',26,['bean':(atendimentoInstance),'var':("error")],3)
 printHtmlPart(18)
 })
-invokeTag('hasErrors','g',27,['bean':(atendimentoInstance)],2)
+invokeTag('hasErrors','g',28,['bean':(atendimentoInstance)],2)
 printHtmlPart(11)
 createTagBody(2, {->
 printHtmlPart(19)
-invokeTag('render','g',30,['template':("form")],-1)
+invokeTag('render','g',31,['template':("form")],-1)
 printHtmlPart(20)
-invokeTag('submitButton','g',33,['name':("create"),'class':("save"),'value':(message(code: 'default.button.create.label', default: 'Create'))],-1)
+invokeTag('submitButton','g',34,['name':("create"),'class':("save"),'value':(message(code: 'default.button.create.label', default: 'Create'))],-1)
 printHtmlPart(21)
 })
-invokeTag('form','g',35,['url':([resource:atendimentoInstance, action:'save'])],2)
+invokeTag('form','g',36,['url':([resource:atendimentoInstance, action:'save'])],2)
 printHtmlPart(22)
 })
-invokeTag('captureBody','sitemesh',37,[:],1)
+invokeTag('captureBody','sitemesh',38,[:],1)
 printHtmlPart(23)
 }
 public static final Map JSP_TAGS = new HashMap()
@@ -86,7 +88,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1457451327079L
+public static final long LAST_MODIFIED = 1457953221545L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'
